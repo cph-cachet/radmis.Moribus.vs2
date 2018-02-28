@@ -31,6 +31,8 @@ using Sensus.Exceptions;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 
+using Xamarin.Forms;
+
 namespace Sensus.DataStores.Remote
 {
     /// <summary>
@@ -263,11 +265,17 @@ namespace Sensus.DataStores.Remote
 
         public AmazonS3RemoteDataStore()
         {
-            _region = _bucket = _folder = null;
+
             _compress = false;
             _encrypt = false;
             _pinnedServiceURL = null;
             _pinnedPublicKey = null;
+
+            _region = "eu-west-1";
+            _bucket = "darohdtu";
+            //_folder = string.Format("moribusVS2/device{0}", Application.Current.Properties["id"]);
+            //_folder = "moribusVS2/devicef"
+            _folder = "moribusVS2/devicef";
         }
 
         public override void Start()
@@ -323,6 +331,7 @@ namespace Sensus.DataStores.Remote
         {
             AWSConfigs.LoggingConfig.LogMetrics = false;  // getting many uncaught exceptions from AWS S3 related to logging metrics
             AmazonS3Config clientConfig = new AmazonS3Config();
+            
             clientConfig.ForcePathStyle = true;  // when using pinning via CloudFront reverse proxy, the bucket name is prepended to the host if the path style is not used. the resulting host does not exist for our reverse proxy, causing DNS name resolution errors. by using the path style, the bucket is appended to the reverse-proxy host and everything goes through fine.
 
             if (_pinnedServiceURL == null)
@@ -334,7 +343,10 @@ namespace Sensus.DataStores.Remote
                 clientConfig.ServiceURL = _pinnedServiceURL;
             }
 
-            return new AmazonS3Client(null, clientConfig);
+            //return new AmazonS3Client(null, clientConfig);
+            string accessKey = "AKIAI6P652AXTX5UOL5Q";
+            string secretKey = "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";
+            return new AmazonS3Client(accessKey, secretKey, clientConfig);
         }
 
         protected override Task<List<Datum>> CommitAsync(IEnumerable<Datum> data, CancellationToken cancellationToken)
