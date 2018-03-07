@@ -61,7 +61,8 @@ namespace Sensus
         #region static members
 
         public const int GPS_DEFAULT_ACCURACY_METERS = 25;
-        public const int GPS_DEFAULT_MIN_TIME_DELAY_MS = 5000;
+        //public const int GPS_DEFAULT_MIN_TIME_DELAY_MS = 5000;
+        public const int GPS_DEFAULT_MIN_TIME_DELAY_MS = 30000;
         public const int GPS_DEFAULT_MIN_DISTANCE_DELAY_METERS = 50;
         private readonly Regex NON_ALPHANUMERIC_REGEX = new Regex("[^a-zA-Z0-9]");
 
@@ -69,10 +70,50 @@ namespace Sensus
         {
             Protocol protocol = new Protocol(name);
 
+            // -DAR- stuff
+            Type dataStoreType = typeof(LocalDataStore);
+
+            List<DataStores.DataStore> dataStoresL = Assembly.GetExecutingAssembly()
+                                     .GetTypes()
+                                     .Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(LocalDataStore)))
+                                     .Select(t => Activator.CreateInstance(t))
+                                     .Cast<DataStores.DataStore>()
+                                     .OrderBy(d => d.DisplayName)
+                                     .ToList();
+
+            List<DataStores.DataStore> dataStoresR = Assembly.GetExecutingAssembly()
+                                   .GetTypes()
+                                   .Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(RemoteDataStore)))
+                                   .Select(t => Activator.CreateInstance(t))
+                                   .Cast<DataStores.DataStore>()
+                                   .OrderBy(d => d.DisplayName)
+                                   .ToList();
+
+            protocol.LocalDataStore = dataStoresL[0] as LocalDataStore;
+            protocol.RemoteDataStore = dataStoresR[0] as RemoteDataStore;
+            protocol.RemoteDataStore.RequireCharging = false;
+            protocol.RemoteDataStore.RequireWiFi = false;
+
             foreach (Probe probe in Probe.GetAll())
             {
-                protocol.AddProbe(probe);
+#if __ANDROID__
+                if (probe is PollingLocationProbe)
+                    protocol.AddProbe(probe);
+#elif __IOS__
+                if (probe is ListeningLocationProbe)
+                    protocol.AddProbe(probe);
+#else
+#warning "Unrecognized platform"
+#endif
             }
+
+            // enabling all:
+            foreach (Probe probe in protocol.Probes)
+            {
+                if (SensusServiceHelper.Get().EnableProbeWhenEnablingAll(probe))
+                    probe.Enabled = true;
+            }
+
 
             SensusServiceHelper.Get().RegisterProtocol(protocol);
         }
@@ -203,7 +244,7 @@ namespace Sensus
                         // if we're not using a previously registered protocol, then we need to configure the new one.
                         if (registeredProtocol == null)
                         {
-                            #region if grouped protocols are available, consider swapping the currely assigned one with another.
+#region if grouped protocols are available, consider swapping the currely assigned one with another.
                             if (protocol.GroupedProtocols.Count > 0)
                             {
                                 // if we didn't select an index above corresponding to the previously registered protocol, generated a random index.
@@ -230,9 +271,9 @@ namespace Sensus
                                     protocol = replacementProtocol;
                                 }
                             }
-                            #endregion
+#endregion
 
-                            #region add any probes for the current platform that didn't come through when deserializing.
+#region add any probes for the current platform that didn't come through when deserializing.
                             // for example, android has a listening WLAN probe, but iOS has a polling WLAN probe. neither will 
                             // come through on the other platform when deserializing, since the types are not defined.
                             List<Type> deserializedProbeTypes = protocol.Probes.Select(p => p.GetType()).ToList();
@@ -246,9 +287,9 @@ namespace Sensus
                                 }
                             }
 
-                            #endregion
+#endregion
 
-                            #region remove triggers that reference unavailable probes
+#region remove triggers that reference unavailable probes
                             // when doing cross-platform conversions, there may be triggers that reference probes that aren't available on the
                             // current platform. remove these triggers and warn the user that the script will not run.
                             // https://insights.xamarin.com/app/Sensus-Production/issues/999
@@ -266,7 +307,7 @@ namespace Sensus
                                     }
                                 }
                             }
-                            #endregion
+#endregion
 
                             SensusServiceHelper.Get().RegisterProtocol(protocol);
                         }
@@ -454,7 +495,7 @@ namespace Sensus
             }
         }
 
-        #endregion
+#endregion
 
         public event EventHandler<bool> ProtocolRunningChanged;
 
@@ -1059,7 +1100,7 @@ namespace Sensus
             }
         }
 
-        #region iOS-specific protocol properties
+#region iOS-specific protocol properties
 
 #if __IOS__
         [OnOffUiProperty("GPS - Pause Location Updates:", true, 30)]
@@ -1218,7 +1259,7 @@ namespace Sensus
             }
         }
 
-        #endregion
+#endregion
 
         /// <summary>
         /// For JSON deserialization
@@ -1679,7 +1720,7 @@ namespace Sensus
         {
             return Task.Run(async () =>
             {
-                #region build report
+#region build report
 
                 ProtocolReportDatum report;
 
@@ -1801,7 +1842,7 @@ namespace Sensus
                     SensusServiceHelper.Get().Logger.Log("Protocol report:" + Environment.NewLine + report, LoggingLevel.Normal, GetType());
                 }
 
-                #endregion
+#endregion
 
                 SensusServiceHelper.Get().Logger.Log("Storing protocol report locally.", LoggingLevel.Normal, GetType());
                 await _localDataStore.AddAsync(report, cancellationToken, false);

@@ -29,6 +29,7 @@ using Xamarin.Forms.Platform.Android;
 using Plugin.CurrentActivity;
 using System.Threading.Tasks;
 
+using Sensus.Android;
 #if __ANDROID_23__
 using Plugin.Permissions;
 #endif
@@ -36,7 +37,7 @@ using Plugin.Permissions;
 [assembly: MetaData("com.facebook.sdk.ApplicationId", Value = "@string/app_id")]
 [assembly: UsesPermission(Microsoft.Band.BandClientManager.BindBandService)]
 
-namespace Sensus.Android
+namespace Sensus
 {
     [Activity(Label = "@string/app_name", MainLauncher = true, LaunchMode = LaunchMode.SingleTask, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     [IntentFilter(new string[] { Intent.ActionView }, Categories = new string[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataScheme = "http", DataHost = "*", DataPathPattern = ".*\\\\.json")]  // protocols downloaded from an http web link

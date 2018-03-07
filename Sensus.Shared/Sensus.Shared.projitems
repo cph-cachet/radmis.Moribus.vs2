@@ -173,6 +173,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)UI\Inputs\SliderInput.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\Inputs\VoiceInput.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\MapPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\MUBS_tabbed.xaml.cs">
+      <DependentUpon>MUBS_tabbed.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)UI\ParticipationReportDetailsPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\ParticipationReportPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\PendingScriptsPage.cs" />
@@ -238,5 +242,11 @@
     <Folder Include="$(MSBuildThisFileDirectory)Probes\User\MicrosoftBand\" />
     <Folder Include="$(MSBuildThisFileDirectory)Probes\User\Scripts\ProbeTriggerProperties\" />
     <Folder Include="$(MSBuildThisFileDirectory)Callbacks\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)UI\MUBS_tabbed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

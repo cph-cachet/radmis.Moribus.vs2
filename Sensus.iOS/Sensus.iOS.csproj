@@ -7,11 +7,11 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{ACFA56BF-B959-4CAF-A2A7-981A9E48E17C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Sensus.iOS</RootNamespace>
+    <RootNamespace>Sensus</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <ReleaseVersion>2.0.0</ReleaseVersion>
-    <AssemblyName>SensusiOS</AssemblyName>
+    <AssemblyName>Sensus</AssemblyName>
     <Description>Endpoint for the Sensus iOS application. This is what gets built and distributed to the iOS App 
 Store. It is possible to run and debug this project on physical and virtual iOS devices.</Description>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,7 +52,7 @@ Store. It is possible to run and debug this project on physical and virtual iOS 
     </IpaPackageName>
     <BuildIpa>false</BuildIpa>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DocumentationFile>bin\iPhone\Debug\SensusiOS.xml</DocumentationFile>
+    <DocumentationFile>bin\iPhone\Debug\Sensus.xml</DocumentationFile>
     <NoWarn>1701, 1591</NoWarn>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <CodesignProvision>

@@ -33,8 +33,9 @@ using UserNotifications;
 using Sensus.iOS.Callbacks.UNUserNotifications;
 using Sensus.iOS.Concurrent;
 using Sensus.Encryption;
+using Sensus.iOS;
 
-namespace Sensus.iOS
+namespace Sensus
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to
