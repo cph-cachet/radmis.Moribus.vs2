@@ -59,6 +59,7 @@ To target the Xamarin Test Cloud, the build configuration should be "Debug | iPh
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -85,6 +86,9 @@ To target the Xamarin Test Cloud, the build configuration should be "Debug | iPh
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Protocols\PromptForUnitTestingProtocol.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
 </Project>

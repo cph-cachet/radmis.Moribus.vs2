@@ -19,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)DataStores\Local\FileLocalDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataStores\Local\LocalDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataStores\Local\RamLocalDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataStores\RegistrationDatabase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataStores\Remote\ConsoleRemoteDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataStores\Remote\RemoteDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datum.cs" />
@@ -28,8 +29,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Exceptions\SensusException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\DateTimeExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\EnumerableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IFileHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ILocal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ImpreciseDatum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LoggingLevel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model_data\lystmest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model_data\Registration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model_data\ScoringCell_ViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PopUpViews\moodPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Probes\Communication\SmsDatum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Probes\Communication\TelephonyDatum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Probes\Communication\TelephonyState.cs" />
@@ -64,6 +71,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Probes\User\Scripts\TriggerWindow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Protocol.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resx\AppResources.Designer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SensusServiceHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataStores\Remote\AmazonS3RemoteDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Anonymization\AnonymizedJsonContractResolver.cs" />
@@ -247,6 +255,16 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)UI\MUBS_tabbed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resx\AppResources.da.resx">
+      <Generator>
+      </Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resx\AppResources.resx">
+      <Generator>
+      </Generator>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

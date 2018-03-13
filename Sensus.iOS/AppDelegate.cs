@@ -34,6 +34,7 @@ using Sensus.iOS.Callbacks.UNUserNotifications;
 using Sensus.iOS.Concurrent;
 using Sensus.Encryption;
 using Sensus.iOS;
+using FFImageLoading.Forms.Touch;
 
 namespace Sensus
 {
@@ -78,6 +79,7 @@ namespace Sensus
             Settings.AppID = "873948892650954";
             Settings.DisplayName = "Sensus";
 
+            CachedImageRenderer.Init();
             Forms.Init();
             FormsMaps.Init();
             MapExtendRenderer.Init();

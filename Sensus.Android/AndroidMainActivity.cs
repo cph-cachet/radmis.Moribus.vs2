@@ -29,6 +29,8 @@ using Xamarin.Forms.Platform.Android;
 using Plugin.CurrentActivity;
 using System.Threading.Tasks;
 
+using FFImageLoading.Forms.Droid;
+
 using Sensus.Android;
 #if __ANDROID_23__
 using Plugin.Permissions;
@@ -74,6 +76,7 @@ namespace Sensus
             Window.AddFlags(global::Android.Views.WindowManagerFlags.ShowWhenLocked);
             Window.AddFlags(global::Android.Views.WindowManagerFlags.TurnScreenOn);
 
+            CachedImageRenderer.Init(true);
             Forms.Init(this, savedInstanceState);
             FormsMaps.Init(this, savedInstanceState);
             ZXing.Net.Mobile.Forms.Android.Platform.Init();

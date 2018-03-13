@@ -17,14 +17,35 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 
+using Sensus.DataStores;
+
+using System.Reflection;
+using Xamarin.Forms.Xaml;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+
 namespace Sensus.UI
 {
     public class App : Application
     {
+        static RegistrationDatabase database;
         public App()
         {
             //MainPage = new SensusMasterDetailPage();
+            
             MainPage = new MUBS_tabbed();
+        }
+
+        public static RegistrationDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new RegistrationDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("RegSQLite.db3"));
+                }
+                return database;
+            }
         }
 
         protected override void OnStart()
