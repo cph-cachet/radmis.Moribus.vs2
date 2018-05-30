@@ -41,11 +41,11 @@ using Plugin.Permissions;
 
 namespace Sensus
 {
-    [Activity(Label = "@string/app_name", MainLauncher = true, LaunchMode = LaunchMode.SingleTask, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "@string/app_name", MainLauncher = false, LaunchMode = LaunchMode.SingleTask, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     [IntentFilter(new string[] { Intent.ActionView }, Categories = new string[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataScheme = "http", DataHost = "*", DataPathPattern = ".*\\\\.json")]  // protocols downloaded from an http web link
     [IntentFilter(new string[] { Intent.ActionView }, Categories = new string[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataScheme = "https", DataHost = "*", DataPathPattern = ".*\\\\.json")]  // protocols downloaded from an https web link
     [IntentFilter(new string[] { Intent.ActionView }, Categories = new string[] { Intent.CategoryDefault }, DataMimeType = "application/json")]  // protocols obtained from "file" and "content" schemes:  http://developer.android.com/guide/components/intents-filters.html#DataTest
-    public class AndroidMainActivity : FormsApplicationActivity
+    public class AndroidMainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
     {
         private AndroidSensusServiceConnection _serviceConnection;
         private ManualResetEvent _activityResultWait;
@@ -65,6 +65,11 @@ namespace Sensus
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Console.Error.WriteLine("--------------------------- Creating activity ---------------------------");
+
+            // set the layout resources first
+            FormsAppCompatActivity.ToolbarResource = Resource.Layout.Toolbar;
+            FormsAppCompatActivity.TabLayoutResource = Resource.Layout.Tabbar;
+
 
             base.OnCreate(savedInstanceState);
 

@@ -29,11 +29,17 @@ namespace Sensus.PopUpViews
 
 
         public DatePicker overviewDate;
-       
 
-        public moodPage ()
-		{
+
+        public moodPage()
+        {
             Title = "Select Mood";
+            ToolbarItems.Add(new ToolbarItem("mytitle", "plus.png", async () =>
+            {
+                await DisplayAlert("working", "how are you", "exit");
+            }
+           ));
+
             curDate = DateTime.Today;
             StackLayout myMood = new StackLayout();
 
@@ -88,7 +94,7 @@ namespace Sensus.PopUpViews
             myMood.Children.Add(lstView);
 
             Content = myMood;
-
+            
 
 
         }

@@ -5,13 +5,21 @@
              xmlns:popup="clr-namespace:Sensus.PopUpViews"
              x:Class="Sensus.UI.MUBS_tabbed">
   <!--Pages can be added as references or inline-->
-    <local:ProtocolsPage />
+    <NavigationPage Title="{local:Translate frontTitle}">
+        <x:Arguments>
+            <local:frontpager/>
+        </x:Arguments>
+    </NavigationPage>
     <NavigationPage Title="Schedule">
         <x:Arguments>
             <local:ProtocolsPage />
         </x:Arguments>
     </NavigationPage>
-    <popup:moodPage/>
+    <NavigationPage Title="moody">
+        <x:Arguments>
+            <popup:moodPage/>
+        </x:Arguments>
+    </NavigationPage>
 
 
 </TabbedPage>

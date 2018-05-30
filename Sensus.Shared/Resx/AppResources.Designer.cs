@@ -118,6 +118,13 @@ namespace Sensus
                 return ResourceManager.GetString("Mood5", resourceCulture);
             }
         }
+        internal static string frontTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("frontTitle", resourceCulture);
+            }
+        }
 
     }
 }

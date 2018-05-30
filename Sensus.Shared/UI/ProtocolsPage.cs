@@ -505,7 +505,7 @@ namespace Sensus.UI
 
             Content = _protocolsList;
 
-            ToolbarItems.Add(new ToolbarItem(null, "plus.png", async () =>
+            ToolbarItems.Add(new ToolbarItem("settings", "plus.png", async () =>
             {
                 List<string> buttons = new string[] { "From QR Code", "From URL", "New" }.ToList();
 
