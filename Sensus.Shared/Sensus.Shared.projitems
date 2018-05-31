@@ -9,6 +9,8 @@
     <Import_RootNamespace>Sensus</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Ambition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AmbitionViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Concurrent\ConcurrentObservableCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Concurrent\IConcurrent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Concurrent\LockConcurrent.cs" />
@@ -36,6 +38,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model_data\lystmest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model_data\Registration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model_data\ScoringCell_ViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MUBS\AmbitionPage.xaml.cs">
+      <DependentUpon>AmbitionPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)PopUpViews\moodPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Probes\Communication\SmsDatum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Probes\Communication\TelephonyDatum.cs" />
@@ -181,7 +187,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)UI\Inputs\SliderInput.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\Inputs\VoiceInput.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\MapPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UI\MUBS_tabbed.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)MUBS\MUBS_tabbed.xaml.cs">
       <DependentUpon>MUBS_tabbed.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -252,7 +258,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Callbacks\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)UI\MUBS_tabbed.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MUBS\MUBS_tabbed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -265,6 +271,12 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resx\AppResources.resx">
       <Generator>
       </Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MUBS\AmbitionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -140,4 +140,8 @@
   <data name="string2" xml:space="preserve">
     <value>hej</value>
   </data>
+  <data name="test" xml:space="preserve">
+    <value>\U269C</value>
+    <comment>Hej darius, this goes in the homepage</comment>
+  </data>
 </root>
