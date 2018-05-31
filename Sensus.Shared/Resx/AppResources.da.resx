@@ -144,4 +144,29 @@
   <data name="string2" xml:space="preserve">
     <value>hej</value>
   </data>
+  <data name="test" xml:space="preserve">
+    <value>\U269C</value>
+    <comment>Hej darius, this goes in the homepage</comment>
+  </data>
+  <data name="fritid_amb" xml:space="preserve">
+    <value>Ekstremt dårligt</value>
+  </data>
+  <data name="healthy_amb" xml:space="preserve">
+    <value>Ekstremt dårligt</value>
+  </data>
+  <data name="physical_amb" xml:space="preserve">
+    <value>Ekstremt dårligt</value>
+  </data>
+  <data name="practical_amb" xml:space="preserve">
+    <value>Ekstremt dårligt</value>
+  </data>
+  <data name="sleep_amb" xml:space="preserve">
+    <value>Ekstremt dårligt</value>
+  </data>
+  <data name="social_amb" xml:space="preserve">
+    <value>Ekstremt dårligt</value>
+  </data>
+  <data name="work_amb" xml:space="preserve">
+    <value>Ekstremt dårligt</value>
+  </data>
 </root>

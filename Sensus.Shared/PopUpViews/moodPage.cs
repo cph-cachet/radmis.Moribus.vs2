@@ -73,6 +73,7 @@ namespace Sensus.PopUpViews
             scoreSelections.Add(new lystmest { NameScore = AppResources.Mood3, ImageScore = "darligt_.png", ScoreLabel = "-1" });
             scoreSelections.Add(new lystmest { NameScore = AppResources.Mood4, ImageScore = "meget_darligt_.png", ScoreLabel = "-2" });
             scoreSelections.Add(new lystmest { NameScore = AppResources.Mood5, ImageScore = "ekstremt_darligt_.png", ScoreLabel = "-3" });
+            scoreSelections.Add(new lystmest { NameScore = "\u269C", ImageScore = "ekstremt_darligt_.png", ScoreLabel = "-3" });
 
             lstView.ItemsSource = scoreSelections;
             lstView.ItemSelected += LstView_ItemSelected;

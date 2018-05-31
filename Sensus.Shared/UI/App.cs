@@ -21,6 +21,7 @@ using Sensus.DataStores;
 
 using System.Reflection;
 using Xamarin.Forms.Xaml;
+using Sensus.MUBS;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -32,8 +33,8 @@ namespace Sensus.UI
         public App()
         {
             //MainPage = new SensusMasterDetailPage();
-            
             MainPage = new MUBS_tabbed();
+            //MainPage = new AmbitionPage2();
         }
 
         public static RegistrationDatabase Database

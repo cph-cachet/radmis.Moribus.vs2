@@ -21,15 +21,13 @@ namespace Sensus.UI
         public frontpager ()
 		{
 			InitializeComponent ();
-
-        }
+          
+		}
 
         void OnPickerSelectedIndexChanged(object sender, EventArgs args)
         {
             if (canvasView != null)
-            {
                 canvasView.InvalidateSurface();
-            }
         }
 
         void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

@@ -44,7 +44,7 @@ namespace Sensus
             {
                 if (object.ReferenceEquals(resourceMan, null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sensus.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sensus.Resx.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -123,6 +123,69 @@ namespace Sensus
             get
             {
                 return ResourceManager.GetString("frontTitle", resourceCulture);
+            }
+        }
+
+
+        internal static string test
+        {
+            get
+            {
+                return ResourceManager.GetString("test", resourceCulture);
+            }
+        }
+
+        internal static string physical_amb
+        {
+            get
+            {
+                return ResourceManager.GetString("physical_amb", resourceCulture);
+            }
+        }
+
+        internal static string work_amb
+        {
+            get
+            {
+                return ResourceManager.GetString("work_amb", resourceCulture);
+            }
+        }
+
+        internal static string fritid_amb
+        {
+            get
+            {
+                return ResourceManager.GetString("fritid_amb", resourceCulture);
+            }
+        }
+
+        internal static string sleep_amb
+        {
+            get
+            {
+                return ResourceManager.GetString("sleep_amb", resourceCulture);
+            }
+        }
+        internal static string practical_amb
+        {
+            get
+            {
+                return ResourceManager.GetString("practical_amb", resourceCulture);
+            }
+        }
+        internal static string social_amb
+        {
+            get
+            {
+                return ResourceManager.GetString("social_amb", resourceCulture);
+            }
+        }
+
+        internal static string healthy_amb
+        {
+            get
+            {
+                return ResourceManager.GetString("healthy_amb", resourceCulture);
             }
         }
 
