@@ -33,8 +33,8 @@ namespace Sensus.UI
         public App()
         {
             //MainPage = new SensusMasterDetailPage();
-            //MainPage = new MUBS_tabbed();
-            MainPage = new AmbitionPage();
+            MainPage = new MUBS_tabbed();
+            //MainPage = new AmbitionPage2();
         }
 
         public static RegistrationDatabase Database

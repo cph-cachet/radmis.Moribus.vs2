@@ -16,7 +16,7 @@ namespace Sensus.UI
     public class TranslateExtension : IMarkupExtension
     {
         readonly CultureInfo ci = null;
-        const string ResourceId = "Sensus.AppResources";
+        const string ResourceId = "Sensus.Resx.AppResources";
 
         public TranslateExtension()
         {

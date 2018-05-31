@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -9,14 +10,14 @@ using Xamarin.Forms.Xaml;
 
 namespace Sensus.MUBS
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AmbitionPage : ContentPage
-    {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class AmbitionPage2 : ContentPage
+	{
         public ObservableCollection<string> Items { get; set; }
 
-        public AmbitionPage()
-        {
-            InitializeComponent();
+        public AmbitionPage2 ()
+		{
+			InitializeComponent ();
             BindingContext = new AmbitionViewModel();
 
             Items = new ObservableCollection<string>
@@ -27,8 +28,8 @@ namespace Sensus.MUBS
                 "Item 4",
                 "Item 5"
             };
-			
-			MyListView.ItemsSource = Items;
+
+            MyListView.ItemsSource = Items;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)

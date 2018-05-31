@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Fritid_amb" xml:space="preserve">
+  <data name="fritid_amb" xml:space="preserve">
     <value>Find some free time for myself to do the things I am passionate about</value>
   </data>
-  <data name="Healthy_amb" xml:space="preserve">
+  <data name="healthy_amb" xml:space="preserve">
     <value>Guide my life to a healthier daily routine</value>
   </data>
   <data name="frontTitle" xml:space="preserve">
@@ -147,16 +147,16 @@
     <value>Extreme bad</value>
     <comment>moodPage</comment>
   </data>
-  <data name="Physiscal_amb" xml:space="preserve">
+  <data name="physical_amb" xml:space="preserve">
     <value>Be more physical active and have fun while moving my muscles</value>
   </data>
-  <data name="Practical_amb" xml:space="preserve">
+  <data name="practical_amb" xml:space="preserve">
     <value>My house is a mess! I would like to organize it and clean it in a weekly basis</value>
   </data>
-  <data name="Sleep_amb" xml:space="preserve">
+  <data name="sleep_amb" xml:space="preserve">
     <value>Take care of myself by having a healthy daily routine</value>
   </data>
-  <data name="Social_amb" xml:space="preserve">
+  <data name="social_amb" xml:space="preserve">
     <value>Be more outgoing and get the willpower to call a friend to meet up</value>
   </data>
   <data name="string2" xml:space="preserve">
@@ -166,7 +166,7 @@
   <data name="test" xml:space="preserve">
     <value>\U269C</value>
   </data>
-  <data name="Work_amb" xml:space="preserve">
+  <data name="work_amb" xml:space="preserve">
     <value>Spend more time at work and make that time more efficient</value>
   </data>
 </root>
