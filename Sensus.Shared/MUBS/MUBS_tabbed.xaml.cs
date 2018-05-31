@@ -10,11 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace Sensus.UI
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MUBS_tabbed : TabbedPage
+    public partial class MUBS_tabbed : TabbedPage 
     {
         public MUBS_tabbed ()
         {
             InitializeComponent();
+
+           
+
         }
     }
 }

@@ -172,6 +172,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)UI\AddScriptTriggerPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\DataStorePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\frontpager.xaml.cs">
+      <DependentUpon>frontpager.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)UI\Inputs\Input.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\Inputs\InputCompletionRecord.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\Inputs\InputDisplayCondition.cs" />
@@ -211,6 +215,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)UI\ScriptRunnersPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\ScriptTriggersPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\ShareLocalDataStorePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\TranslateExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\UiProperties\DateUiProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\UiProperties\DisplayStringUiProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\UiProperties\DisplayYesNoUiProperty.cs" />
@@ -274,7 +279,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MUBS\AmbitionPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)UI\frontpager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

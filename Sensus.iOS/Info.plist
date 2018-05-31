@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Sensus</string>
+	<string>Mubs</string>
 	<key>CFBundleIdentifier</key>
-	<string>edu.virginia.sie.ptl.sensus</string>
+	<string>dtu.compute.cachet.mubs</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>

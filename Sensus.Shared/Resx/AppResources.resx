@@ -123,6 +123,10 @@
   <data name="Healthy_amb" xml:space="preserve">
     <value>Guide my life to a healthier daily routine</value>
   </data>
+  <data name="frontTitle" xml:space="preserve">
+    <value>My day</value>
+    <comment>title on the frontpage</comment>
+  </data>
   <data name="Mood1" xml:space="preserve">
     <value>Good</value>
     <comment>moodPage</comment>
