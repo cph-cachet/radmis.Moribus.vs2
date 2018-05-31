@@ -24,13 +24,13 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Picker x:Name="fillTypePicker"
+        <Picker x:Name="fillTypePicker"
                 Title="Path Fill Type"
                 Grid.Row="0"
                 Grid.Column="0"
                 Margin="10"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-                <Picker.Items>
+            <Picker.Items>
                     <x:String>Winding</x:String>
                     <x:String>EvenOdd</x:String>
                     <x:String>InverseWinding</x:String>
@@ -41,13 +41,13 @@
                 </Picker.SelectedIndex>
             </Picker>
 
-            <Picker x:Name="drawingModePicker"
+        <Picker x:Name="drawingModePicker"
                 Title="Drawing Mode"
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="10"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-                <Picker.Items>
+            <Picker.Items>
                     <x:String>Fill only</x:String>
                     <x:String>Stroke only</x:String>
                     <x:String>Stroke then Fill</x:String>
